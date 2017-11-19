@@ -1,7 +1,3 @@
 import Layout from '../components/layout'
 
-export default () => (
-  <Layout>
-    Home Page
-  </Layout>
-)
+export default () => <Layout>Home Page</Layout>
