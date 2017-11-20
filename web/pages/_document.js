@@ -1,5 +1,15 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet, injectGlobal } from 'styled-components'
+
+injectGlobal`
+  body, html, p {
+    font-family: 'Bookman Old Style', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+  }
+`
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
