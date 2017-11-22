@@ -22,9 +22,15 @@
     * Controls on feeding new poems back into model
 
 * COLLECT AND NORMALIZE DATA
+
   * Get all haikus by Basho
   * Get as many more haikus in the style of and of comparable quality to Basho
     as possible
+
+* Style fade in on everything but the haiku
+  * when mouse event happens onscreen change opacity slightly
+  * as mouse moves closer to button increase visibility
+  * have header <Title /> refresh and then fade out upon vote button click
 
 # Notes:
 
