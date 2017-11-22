@@ -9,7 +9,7 @@
 
 * Any other pages needed?
 
-* Choose a domain name and buy/host via now.sh
+* Hook up basho.ai to now.sh
 
 * Haiku Service
 
