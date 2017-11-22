@@ -20,16 +20,19 @@ const Header = styled.header`
 const Content = styled.main`
   padding: 1em 2em;
 `
+
 const Title = styled.div`
   margin-left: 1vw;
   font-size: 10vw;
   font-family: 'FirstCharFont';
 `
+
 const HeadWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 `
+
 const LINKS = [
   {
     name: 'Home',
@@ -40,6 +43,7 @@ const LINKS = [
     href: '/about',
   },
 ]
+
 const ContentWrapper = styled.div`
   text-align: center;
   ::first-letter {
@@ -47,6 +51,7 @@ const ContentWrapper = styled.div`
     font-family: 'FirstCharFont';
   }
 `
+
 const Haiku = [
   'Blowing from the west',
   'the fallen leaves gather',
@@ -75,8 +80,8 @@ export default ({ children }) => (
     </Header>
     <ContentWrapper>
       {Haiku.map((line, index) => <p key={index}>{line}</p>)}
-      <Button /*props={DECREMENT}*/>Down vote</Button>
-      <Button /*props={INCREMENT}*/>Up vote</Button>
+      <Button>Vote Down</Button>
+      <Button>Vote Up</Button>
     </ContentWrapper>
     <Content>{children}</Content>
   </Wrapper>
