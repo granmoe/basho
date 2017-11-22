@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const FadeIn = keyframes`
-@-webkit-keyframes NAME-YOUR-ANIMATION {
+const fadeIn = keyframes`
+@-webkit-keyframes fadeIn{
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
-@-moz-keyframes NAME-YOUR-ANIMATION {
+@-moz-keyframes fadeIn {
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
-@-o-keyframes NAME-YOUR-ANIMATION {
+@-o-keyframes fadeIn {
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
-@keyframes NAME-YOUR-ANIMATION {
+@keyframes fadeIn {
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
@@ -24,13 +24,15 @@ const Anchor = styled.a`
   text-decoration: none;
 
   :active,
-  :hover,
+  :hover {
+    animation: ${fadeIn} 2s linear;
+  }
+  ,
   :focus,
   :visited {
     text-decoration: none;
     color: inherit;
   }
-  animation: ${fadeIn} 2s linear;
 `
 
 export default ({ children, href }) => <Anchor href={href}>{children}</Anchor>
