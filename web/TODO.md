@@ -19,6 +19,10 @@
   * Automatically integrate with AI model
     * Controls on feeding new poems back into model
 
+* COLLECT AND NORMALIZE DATA
+  * Get all haikus by Basho
+  * Get as many more haikus in the style of and of comparable quality to Basho as possible
+
 # Notes:
 
 functionally structured like randoma11y.com (but not necessarily the same look)
