@@ -26,3 +26,6 @@
 # Notes:
 
 functionally structured like randoma11y.com (but not necessarily the same look)
+
+http://webdesignernotebook.com/examples/twinkle-twinkle.html
+CAUTION: SUPER OLD http://webdesignernotebook.com/css/styling-a-poem-with-advanced-css-selectors/
