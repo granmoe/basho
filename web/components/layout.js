@@ -40,7 +40,7 @@ const LINKS = [
     href: '/about',
   },
 ]
-const HaikuWrapper = styled.div`
+const ContentWrapper = styled.div`
   text-align: center;
   ::first-letter {
     font-size: 3em;
@@ -53,9 +53,19 @@ const Haiku = [
   'in the east',
 ]
 
+const Button = styled.button`
+  color: ${({ theme }) => theme.primary};
+  background-color: ${({ theme }) => theme.secondary};
+  margin: 1em;
+  border-radius: 0px;
+  border: 1px solid ${({ theme }) => theme.primary};
+  height: 5em;
+  width: 7em;
+`
+
 export default ({ children }) => (
   <Wrapper>
-    <Title>h.AI.ku</Title>
+    <Title>basho.ai</Title>
     <Header>
       {LINKS.map(({ href, name }) => (
         <Link href={href} key={name} passHref>
@@ -63,9 +73,11 @@ export default ({ children }) => (
         </Link>
       ))}
     </Header>
-    <HaikuWrapper>
+    <ContentWrapper>
       {Haiku.map((line, index) => <p key={index}>{line}</p>)}
-    </HaikuWrapper>
+      <Button /*props={DECREMENT}*/>Down vote</Button>
+      <Button /*props={INCREMENT}*/>Up vote</Button>
+    </ContentWrapper>
     <Content>{children}</Content>
   </Wrapper>
 )
