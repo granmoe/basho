@@ -28,4 +28,9 @@
 functionally structured like randoma11y.com (but not necessarily the same look)
 
 http://webdesignernotebook.com/examples/twinkle-twinkle.html
-CAUTION: SUPER OLD http://webdesignernotebook.com/css/styling-a-poem-with-advanced-css-selectors/
+(shows poem styling)
+
+https://www.poetrygenerator.ninja/poem/a1a915bf94233c75
+(poem styling)
+(AI poem generator)
+
