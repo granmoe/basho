@@ -4,12 +4,17 @@ import { ServerStyleSheet, injectGlobal } from 'styled-components'
 injectGlobal`
   body, html {
     height: 100%;
-    font-family: 'Bookman Old Style', Arial, sans-serif;
+    font-family: 'FirstCharFont';
     margin: 0;
     padding: 0;
     outline: 0;
     border: 0;
+    
   }
+  @font-face {
+    font-family: 'FirstCharFont';
+    src: url('../fonts/gothic.ttf') format('truetype');
+}
 
   /* hacky workaround for stupid next.js wrapper divs */
   body > div:first-child,
