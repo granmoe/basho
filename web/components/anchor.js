@@ -1,23 +1,9 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
-@-webkit-keyframes fadeIn{
   0%   { opacity: 0; }
   100% { opacity: 1; }
-}
-@-moz-keyframes fadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes fadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes fadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
 `
 
 const Anchor = styled.a`
@@ -25,7 +11,7 @@ const Anchor = styled.a`
 
   :active,
   :hover {
-    animation: ${fadeIn} 2s linear;
+    animation: ${fadeIn} 4s linear;
   }
   ,
   :focus,
