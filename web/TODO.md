@@ -11,11 +11,12 @@
 
 * Choose a domain name and buy/host via now.sh
 
-* Return a poem from python function
-* Get poem from python function in web app
-* Generate random poem via AI in python func
-* Allow users to vote poem up/down or skip
+* Haiku Service
 
+  * Return a poem from python function
+  * Get poem from python function in web app
+  * Generate random poem via AI in python func
+  * Allow users to vote poem up/down or skip
   * Bunch of DB work
     * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
   * Automatically integrate with AI model
