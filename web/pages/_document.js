@@ -9,12 +9,12 @@ injectGlobal`
     padding: 0;
     outline: 0;
     border: 0;
-    
   }
+
   @font-face {
     font-family: 'FirstCharFont';
     src: url('../fonts/gothic.ttf') format('truetype');
-}
+  }
 
   /* hacky workaround for stupid next.js wrapper divs */
   body > div:first-child,
