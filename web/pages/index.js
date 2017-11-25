@@ -1,10 +1,45 @@
-import Layout from '../components/layout'
 import 'isomorphic-unfetch'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+import config from '../config'
+import Layout from '../components/layout'
+
+const ContentWrapper = styled.div`
+  text-align: center;
+  font-family: Lato, sans-serif;
+  ::first-letter {
+    font-size: 3em;
+  }
+`
+
+const Haiku = [
+  'Blowing from the west',
+  'the fallen leaves gather',
+  'in the east',
+]
+
+const Button = styled.button`
+  color: ${({ theme }) => theme.primary};
+  background-color: ${({ theme }) => theme.secondary};
+  margin: 1em;
+  border-radius: 0px;
+  border: 1px solid ${({ theme }) => theme.primary};
+  height: 5em;
+  width: 7em;
+`
 
 const HomePage = ({ theme }) => (
   <ThemeProvider theme={theme}>
-    <Layout>Home Page</Layout>
+    <Layout>
+      <ContentWrapper>
+        {Haiku.map((line, index) => <p key={index}>{line}</p>)}
+        { config.enableButtons && ( // TODO: return array? Why no worky?
+          <div>
+            <Button>Vote Down</Button>
+            <Button>Vote Up</Button>
+          </div>
+        ) }
+      </ContentWrapper>
+    </Layout>
   </ThemeProvider>
 )
 

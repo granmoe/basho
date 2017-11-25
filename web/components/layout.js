@@ -24,13 +24,7 @@ const Content = styled.main`
 const Title = styled.div`
   margin-left: 1vw;
   font-size: 10vw;
-  font-family: 'FirstCharFont';
-`
-
-const HeadWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  font-family: 'Lato', sans-serif;
 `
 
 const LINKS = [
@@ -44,30 +38,6 @@ const LINKS = [
   },
 ]
 
-const ContentWrapper = styled.div`
-  text-align: center;
-  ::first-letter {
-    font-size: 3em;
-    font-family: 'FirstCharFont';
-  }
-`
-
-const Haiku = [
-  'Blowing from the west',
-  'the fallen leaves gather',
-  'in the east',
-]
-
-const Button = styled.button`
-  color: ${({ theme }) => theme.primary};
-  background-color: ${({ theme }) => theme.secondary};
-  margin: 1em;
-  border-radius: 0px;
-  border: 1px solid ${({ theme }) => theme.primary};
-  height: 5em;
-  width: 7em;
-`
-
 export default ({ children }) => (
   <Wrapper>
     <Title>basho.ai</Title>
@@ -78,11 +48,6 @@ export default ({ children }) => (
         </Link>
       ))}
     </Header>
-    <ContentWrapper>
-      {Haiku.map((line, index) => <p key={index}>{line}</p>)}
-      <Button>Vote Down</Button>
-      <Button>Vote Up</Button>
-    </ContentWrapper>
     <Content>{children}</Content>
   </Wrapper>
 )

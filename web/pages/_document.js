@@ -4,16 +4,11 @@ import { ServerStyleSheet, injectGlobal } from 'styled-components'
 injectGlobal`
   body, html {
     height: 100%;
-    font-family: 'FirstCharFont';
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
     outline: 0;
     border: 0;
-  }
-
-  @font-face {
-    font-family: 'FirstCharFont';
-    src: url('../fonts/gothic.ttf') format('truetype');
   }
 
   /* hacky workaround for stupid next.js wrapper divs */
@@ -38,6 +33,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
           <title>Basho</title>
           {this.props.styleTags}
         </Head>
