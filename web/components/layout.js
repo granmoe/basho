@@ -56,11 +56,14 @@ const Haiku = [
 const Button = styled.button`
   color: ${({ theme }) => theme.primary};
   background-color: ${({ theme }) => theme.secondary};
+  border: 2px solid ${({ theme }) => theme.primary};
   margin: 1em;
-  border-radius: 0px;
-  border: 1px solid ${({ theme }) => theme.primary};
   height: 5em;
   width: 7em;
+  font-weight: 700;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 export default ({ children }) => (
@@ -78,6 +81,10 @@ export default ({ children }) => (
       <Button /*props={DECREMENT}*/>Down vote</Button>
       <Button /*props={INCREMENT}*/>Up vote</Button>
     </ContentWrapper>
-    <Content>{children}</Content>
+    <Content>
+      <Link>
+        <a>{children}</a>
+      </Link>
+    </Content>
   </Wrapper>
 )
