@@ -32,12 +32,12 @@ const HomePage = ({ theme }) => (
     <Layout>
       <ContentWrapper>
         {Haiku.map((line, index) => <p key={index}>{line}</p>)}
-        { config.enableButtons && ( // TODO: return array? Why no worky?
+        {config.enableButtons && ( // TODO: return array? Why no worky?
           <div>
             <Button>Vote Down</Button>
             <Button>Vote Up</Button>
           </div>
-        ) }
+        )}
       </ContentWrapper>
     </Layout>
   </ThemeProvider>
