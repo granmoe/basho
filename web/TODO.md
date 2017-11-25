@@ -1,11 +1,20 @@
 # TODO:
 
-* Add poem (hard-coded at first)
 * Fancy text style for poem
   * maybe small caps for first line if it looks cool
   * maybe this https://css-tricks.com/snippets/css/drop-caps/
   * first line starts align left, next align middle, last align right and make sure it's responsive
 * Add basic explanation to about page
+
+* Style fade in on everything but the haiku
+  * when mouse event happens onscreen change opacity slightly
+  * as mouse moves closer to button increase visibility
+  * have header <Title /> refresh and then fade out upon vote button click
+
+* COLLECT AND CLEAN DATA
+  * Get all haikus by Basho
+  * Get as many more haikus in the style of and of comparable quality to Basho
+    as possible
 
 * Haiku Service
 
@@ -17,16 +26,6 @@
     * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
   * Automatically integrate with AI model
     * Controls on feeding new poems back into model
-
-* COLLECT AND NORMALIZE DATA
-  * Get all haikus by Basho
-  * Get as many more haikus in the style of and of comparable quality to Basho
-    as possible
-
-* Style fade in on everything but the haiku
-  * when mouse event happens onscreen change opacity slightly
-  * as mouse moves closer to button increase visibility
-  * have header <Title /> refresh and then fade out upon vote button click
 
 * OPTIMIZATIONS
   * Cool favicon
