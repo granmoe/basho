@@ -43,7 +43,7 @@ export default ({ children }) => (
     <Title>basho.ai</Title>
     <Header>
       {LINKS.map(({ href, name }) => (
-        <Link href={href} key={name} passHref>
+        <Link href={href} key={name} passHref prefetch>
           <Anchor>{name}</Anchor>
         </Link>
       ))}

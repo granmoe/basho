@@ -1,15 +1,11 @@
 # TODO:
 
-* hover styles for Anchor component, maybe a fade in (just so I can try
-  keyframes with styled-components)
 * Add poem (hard-coded at first)
 * Fancy text style for poem
-  * use first-letter and first-line pseudo elements
+  * maybe small caps for first line if it looks cool
+  * maybe this https://css-tricks.com/snippets/css/drop-caps/
+  * first line starts align left, next align middle, last align right and make sure it's responsive
 * Add basic explanation to about page
-
-* Any other pages needed?
-
-* Hook up basho.ai to now.sh
 
 * Haiku Service
 
@@ -23,7 +19,6 @@
     * Controls on feeding new poems back into model
 
 * COLLECT AND NORMALIZE DATA
-
   * Get all haikus by Basho
   * Get as many more haikus in the style of and of comparable quality to Basho
     as possible
@@ -32,6 +27,11 @@
   * when mouse event happens onscreen change opacity slightly
   * as mouse moves closer to button increase visibility
   * have header <Title /> refresh and then fade out upon vote button click
+
+* OPTIMIZATIONS
+  * Cool favicon
+  * Some image off screen so it shows up in thumbnails
+  * Ability to change to another random color theme
 
 # Notes:
 
