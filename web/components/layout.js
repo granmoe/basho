@@ -24,7 +24,7 @@ const Content = styled.main`
 const Title = styled.div`
   margin-left: 1vw;
   font-size: 10vw;
-  font-family: 'Lato', sans-serif;
+  font-family: 'tempura';
 `
 
 const LINKS = [

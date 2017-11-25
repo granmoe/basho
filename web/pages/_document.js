@@ -4,11 +4,24 @@ import { ServerStyleSheet, injectGlobal } from 'styled-components'
 injectGlobal`
   body, html {
     height: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: 'fondamento-regular', Arial;
     margin: 0;
     padding: 0;
     outline: 0;
     border: 0;
+  }
+
+  @font-face {
+    font-family: 'fondamento-regular';
+    src: url('../static/Fondamento-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'fondamento-italic';
+    src: url('../static/Fondamento-Italic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'tempura';
+    src: url('../static/gothic.ttf') format('truetype');
   }
 
   /* hacky workaround for stupid next.js wrapper divs */
@@ -33,7 +46,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
           <title>Basho</title>
           {this.props.styleTags}
         </Head>

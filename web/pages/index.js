@@ -5,9 +5,9 @@ import Layout from '../components/layout'
 
 const ContentWrapper = styled.div`
   text-align: center;
-  font-family: Lato, sans-serif;
   ::first-letter {
     font-size: 3em;
+    font-family: 'tempura';
   }
 `
 
