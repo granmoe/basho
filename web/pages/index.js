@@ -13,7 +13,7 @@ const HaikuWidth = Haiku.reduce((acc, current) => acc + current)
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
-  max-width: ${(HaikuWidth.length - HaikuWidth.length / 2) * 16}px;
+  max-width: ${HaikuWidth.length / 2 * 16}px;
   ::first-letter {
     font-size: 3em;
     font-family: 'tempura';
