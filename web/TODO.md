@@ -20,12 +20,10 @@
 
   * Return a poem from python function
   * Get poem from python function in web app
-  * Generate random poem via AI in python func
   * Allow users to vote poem up/down or skip
   * Bunch of DB work
     * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
-  * Automatically integrate with AI model
-    * Controls on feeding new poems back into model
+  * Automatically integrate with AI model (cron job)
 
 * OPTIMIZATIONS
   * Cool favicon
@@ -41,3 +39,6 @@ styling)
 
 https://www.poetrygenerator.ninja/poem/a1a915bf94233c75 (poem styling) (AI poem
 generator)
+
+
+Generate all haikus at once on the server using the deep learning model, up to a feasible limit of haikus (determined by faunadb pricing). Then let the voting find which ones to keep. Every week or month or however long it takes to get votes on a reasonable amount of the generated haikus, feed the haikus that were voted up back into the model (not sure if you can feed in the "bad" ones to train the model against them), then delete all but the good ones, and generate new ones to fill up to the same feasible limit from before (like 10,000 or something). Eventually, increase the limit. More sophisticated pruning can be implemented in the future as an optimization.
