@@ -25,6 +25,8 @@
     * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
   * Automatically integrate with AI model (cron job)
 
+* Add tests once we have any non-trivial logic to test
+
 * OPTIMIZATIONS
   * Cool favicon
   * Some image off screen so it shows up in thumbnails
