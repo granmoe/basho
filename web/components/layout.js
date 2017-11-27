@@ -15,6 +15,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 4em;
 `
 
 const Content = styled.main`
@@ -40,8 +41,8 @@ const LINKS = [
 
 export default ({ children }) => (
   <Wrapper>
-    <Title>basho.ai</Title>
     <Header>
+      <Title>basho.ai</Title>
       {LINKS.map(({ href, name }) => (
         <Link href={href} key={name} passHref prefetch>
           <Anchor>{name}</Anchor>
