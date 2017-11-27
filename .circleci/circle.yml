@@ -1,0 +1,7 @@
+deployment:
+  production:
+    branch: master
+    commands:
+      - URL=$(now -t ${NOW_TOKEN})
+      - cd web
+      - now -t ${NOW_TOKEN} alias set ${URL} basho.ai
