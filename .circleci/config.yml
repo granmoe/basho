@@ -20,9 +20,10 @@ jobs:
           cd web
           npm test
       - deploy:
+          working_directory: web
           command: |
-              cd web
               URL=$(now -t ${NOW_TOKEN})
+              echo $URL
               now -t ${NOW_TOKEN} alias ${URL} basho.ai
 
 # TODO: Don't care about this much right now, but we could get it working later
