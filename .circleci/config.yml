@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:4.8.2
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: sudo npm install -g npm@latest
@@ -19,6 +19,12 @@ jobs:
       - run: |
           cd web
           npm test
+      - deploy:
+          command: |
+              URL=$(now -t ${NOW_TOKEN})
+              cd web
+              now -t ${NOW_TOKEN} alias ${URL} basho.ai
+
 # TODO: Don't care about this much right now, but we could get it working later
 #      - run:
 #          name: code-coverage
