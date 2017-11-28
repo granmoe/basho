@@ -1,7 +1,7 @@
 general:
   build_dir: web
 deployment:
-  development:
+  production:
     branch: master
     commands:
       - URL=$(now -t ${NOW_TOKEN})
