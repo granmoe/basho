@@ -3,15 +3,18 @@
 * Fancy text style for poem
   * maybe small caps for first line if it looks cool
   * maybe this https://css-tricks.com/snippets/css/drop-caps/
-  * first line starts align left, next align middle, last align right and make sure it's responsive
+  * first line starts align left, next align middle, last align right and make
+    sure it's responsive
 * Add basic explanation to about page
 
 * Style fade in on everything but the haiku
+
   * when mouse event happens onscreen change opacity slightly
   * as mouse moves closer to button increase visibility
   * have header <Title /> refresh and then fade out upon vote button click
 
 * COLLECT AND CLEAN DATA
+
   * Get all haikus by Basho
   * Get as many more haikus in the style of and of comparable quality to Basho
     as possible
@@ -42,5 +45,14 @@ styling)
 https://www.poetrygenerator.ninja/poem/a1a915bf94233c75 (poem styling) (AI poem
 generator)
 
+Generate all haikus at once on the server using the deep learning model, up to a
+feasible limit of haikus (determined by faunadb pricing). Then let the voting
+find which ones to keep. Every week or month or however long it takes to get
+votes on a reasonable amount of the generated haikus, feed the haikus that were
+voted up back into the model (not sure if you can feed in the "bad" ones to
+train the model against them), then delete all but the good ones, and generate
+new ones to fill up to the same feasible limit from before (like 10,000 or
+something). Eventually, increase the limit. More sophisticated pruning can be
+implemented in the future as an optimization.
 
-Generate all haikus at once on the server using the deep learning model, up to a feasible limit of haikus (determined by faunadb pricing). Then let the voting find which ones to keep. Every week or month or however long it takes to get votes on a reasonable amount of the generated haikus, feed the haikus that were voted up back into the model (not sure if you can feed in the "bad" ones to train the model against them), then delete all but the good ones, and generate new ones to fill up to the same feasible limit from before (like 10,000 or something). Eventually, increase the limit. More sophisticated pruning can be implemented in the future as an optimization.
+<!-- ^^^ this is cool! ^^^ -->

@@ -24,7 +24,6 @@ injectGlobal`
     src: url('../static/gothic.ttf') format('truetype');
   }
 
-  /* hacky workaround for stupid next.js wrapper divs */
   body > div:first-child,
   #__next,
   #__next > div {

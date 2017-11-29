@@ -13,7 +13,10 @@ const HaikuWidth = Haiku.reduce((acc, current) => acc + current)
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
-  max-width: ${HaikuWidth.length / 2 * 16}px;
+  font-size: 1.5em;
+  padding-top: 20vh;
+  width: ${HaikuWidth.length}vw;
+  max-width: ${HaikuWidth.length * 0.4}em;
   ::first-letter {
     font-size: 3em;
     font-family: 'tempura';
@@ -21,27 +24,15 @@ const ContentWrapper = styled.div`
     line-height: 1;
   }
   ::first-line {
-    float: left;
     font-variant: small-caps;
   }
   @media screen and (max-width: 500px) {
-    ::first-letter {
-      padding-left: 5vw;
-    }
-    ::first-line {
-      padding-left: -5vw;
-    }
-    max-width: ${Haiku[0].length * 11}px;
-    font-size: 0.7em;
-    transition: font-size 1s;
+    margin: inherit 2em;
   }
 `
 const Line = styled.p`
   margin: 0.5em 0;
   text-align: ${props => props.align};
-  @media screen and (max-width: 500px) {
-    text-align: center;
-  }
 `
 
 const Button = styled.button`
@@ -61,7 +52,7 @@ const HomePage = ({ theme }) => (
         <Line align="left">{Haiku[0]}</Line>
         <Line align="center">{Haiku[1]}</Line>
         <Line align="right">{Haiku[2]}</Line>
-        {config.enableButtons && ( // TODO: return array? Why no worky?
+        {config.enableButtons && (
           <div>
             <Button>Vote Down</Button>
             <Button>Vote Up</Button>

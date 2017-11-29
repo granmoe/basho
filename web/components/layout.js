@@ -7,25 +7,30 @@ const Wrapper = styled.div`
   height: 100%;
   background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.primary};
-  font-size: 1.5em;
 `
 
 const Header = styled.header`
-  padding: 1em 2em;
+  padding: 2em 1em;
   display: flex;
+  font-size: 1.5;
   justify-content: space-around;
   align-items: center;
   height: 4em;
+  @media screen and (max-width: 500px) {
+    font-size: 0.8em;
+    flex-direction: column;
+  }
 `
 
-const Content = styled.main`
-  padding: 1em 2em;
-`
+const Content = styled.main``
 
 const Title = styled.div`
-  margin-left: 1vw;
-  font-size: 10vw;
+  font-size: 12vw;
   font-family: 'tempura';
+  @media screen and (max-width: 500px) {
+    font-size 25vw;
+    padding-top: 1em;
+  }
 `
 
 const LINKS = [
