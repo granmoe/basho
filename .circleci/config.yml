@@ -18,6 +18,9 @@ jobs:
       - run: |
           cd web
           npm test
+      - run: |
+          cd web
+          npm run build
       - deploy:
           working_directory: web
           command: |
