@@ -2,11 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:4.8.3
+      - image: circleci/node:8.9.1
     steps:
       - checkout
-      - run: sudo npm install -g npm@latest
-      - run: sudo npm install -g now@latest
+      - run: npm install -g now@latest
       - restore_cache:
           key: dependency-cache-{{ checksum "web/package.json" }}
       - run: |
@@ -25,15 +24,3 @@ jobs:
               now -t ${NOW_TOKEN}
               now -t ${NOW_TOKEN} alias
  
-# TODO: Don't care about this much right now, but we could get it working later
-#      - run:
-#          name: code-coverage
-#          command: './web/node_modules/.bin/nyc report --reporter=text-lcov'
-#      - store_artifacts:
-#          path: test-results.xml
-#          prefix: tests
-#      - store_artifacts:
-#          path: coverage
-#          prefix: coverage
-#      - store_test_results:
-#          path: test-results.xml
