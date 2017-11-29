@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-const fadeIn = keyframes`
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+const fadeOut = keyframes`
+  0% { opacity: 1; }
+  100%   { opacity: 0; }
 `
 
 const Anchor = styled.a`
@@ -14,7 +14,7 @@ const Anchor = styled.a`
 
   :active,
   :hover {
-    animation: ${fadeIn} 4s linear;
+    animation: ${fadeOut} 6s linear;
   }
   ,
   :focus,

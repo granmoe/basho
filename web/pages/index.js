@@ -14,7 +14,7 @@ const HaikuWidth = Haiku.reduce((acc, current) => acc + current)
 const ContentWrapper = styled.div`
   margin: 0 auto;
   font-size: 1.5em;
-  padding-top: 20vh;
+  margin-top: 20vh;
   width: ${HaikuWidth.length}vw;
   max-width: ${HaikuWidth.length * 0.4}em;
   ::first-letter {
@@ -26,8 +26,9 @@ const ContentWrapper = styled.div`
   ::first-line {
     font-variant: small-caps;
   }
-  @media screen and (max-width: 500px) {
-    margin: inherit 2em;
+  @media screen and (max-width: 600px) {
+    margin: 10vh auto;
+    width: 80vw;
   }
 `
 const Line = styled.p`

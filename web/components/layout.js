@@ -10,13 +10,14 @@ const Wrapper = styled.div`
 `
 
 const Header = styled.header`
-  padding: 2em 1em;
+  padding: 3vw 0 0 0;
   display: flex;
   font-size: 1.5;
   justify-content: space-around;
   align-items: center;
-  height: 4em;
-  @media screen and (max-width: 500px) {
+  height: 10em;
+  @media screen and (max-width: 600px) {
+    padding: 15vw 1em;
     font-size: 0.8em;
     flex-direction: column;
   }
@@ -27,9 +28,11 @@ const Content = styled.main``
 const Title = styled.div`
   font-size: 12vw;
   font-family: 'tempura';
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     font-size 25vw;
-    padding-top: 1em;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 9em;
   }
 `
 
@@ -47,7 +50,7 @@ const LINKS = [
 export default ({ children }) => (
   <Wrapper>
     <Header>
-      <Title>basho.ai</Title>
+      <Title>場所</Title>
       {LINKS.map(({ href, name }) => (
         <Link href={href} key={name} passHref prefetch>
           <Anchor>{name}</Anchor>
