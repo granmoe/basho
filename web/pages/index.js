@@ -2,11 +2,12 @@ import 'isomorphic-unfetch'
 import styled, { ThemeProvider, keyframes } from 'styled-components'
 import config from '../config'
 import Layout from '../components/layout'
+import withMouseActive from '../components/with-mouse-active'
 
 const Haiku = [
-  'Blowing from the west',
+  'Blowing from the West',
   'the fallen leaves gather',
-  'in the east',
+  'in the East',
 ]
 
 const HaikuWidth = Haiku.reduce((acc, current) => acc + current)
@@ -46,9 +47,9 @@ const Button = styled.button`
   width: 7em;
 `
 
-const HomePage = ({ theme }) => (
+const HomePage = ({ theme, isMouseActive }) => (
   <ThemeProvider theme={theme}>
-    <Layout>
+    <Layout isMouseActive={isMouseActive}>
       <ContentWrapper>
         <Line align="left">{Haiku[0]}</Line>
         <Line align="center">{Haiku[1]}</Line>
@@ -64,7 +65,6 @@ const HomePage = ({ theme }) => (
   </ThemeProvider>
 )
 
-// TODO: Move this to _document.js...maybe ThemeProvider can wrap everything in there?
 // get top 100 color combos from randoma11y and pseudo-randomly pick one
 HomePage.getInitialProps = async ({ req }) => {
   const res = await fetch('https://randoma11y.com/combos/top')
@@ -75,4 +75,4 @@ HomePage.getInitialProps = async ({ req }) => {
   }
 }
 
-export default HomePage
+export default withMouseActive(HomePage)

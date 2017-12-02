@@ -13,6 +13,9 @@
   * as mouse moves closer to button increase visibility
   * have header <Title /> refresh and then fade out upon vote button click
 
+* Store randoma11y themes on server to avoid having to make that slow call all the time
+  * Update them with a daily cron job
+
 * COLLECT AND CLEAN DATA
 
   * Get all haikus by Basho

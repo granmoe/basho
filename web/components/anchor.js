@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
-
-const fadeOut = keyframes`
-  0% { opacity: 1; }
-  100%   { opacity: 0; }
-`
+import {fadeIn, fadeOut} from './fade-in-out'
 
 const Anchor = styled.a`
   text-decoration: none;
@@ -13,15 +9,15 @@ const Anchor = styled.a`
   padding-bottom: 0.5em;
 
   :active,
-  :hover {
-    animation: ${fadeOut} 6s linear;
-  }
-  ,
   :focus,
   :visited {
     text-decoration: none;
     color: inherit;
   }
+
+  opacity: ${({isMouseActive}) => isMouseActive ? 1 : 0 };
+  animation: 1s ${props => props.isMouseActive ? fadeIn : fadeOut } ease-in-out;
 `
 
-export default ({ children, href }) => <Anchor href={href}>{children}</Anchor>
+export default ({ children, href, isMouseActive }) =>
+  <Anchor isMouseActive={isMouseActive} href={href}>{children}</Anchor>
