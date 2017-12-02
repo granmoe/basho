@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Anchor from './anchor'
 
 const Wrapper = styled.div`

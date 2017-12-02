@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-const fadeOut = keyframes`
-  0% { opacity: 1; }
-  100%   { opacity: 0; }
-`
-
 const Anchor = styled.a`
   text-decoration: none;
   font-size: 1.5em;
@@ -13,10 +8,6 @@ const Anchor = styled.a`
   padding-bottom: 0.5em;
 
   :active,
-  :hover {
-    animation: ${fadeOut} 6s linear;
-  }
-  ,
   :focus,
   :visited {
     text-decoration: none;
