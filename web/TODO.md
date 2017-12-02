@@ -26,6 +26,7 @@
 
   * Cool favicon
   * Some image off screen so it shows up in thumbnails
+  * Could prob encapsulate fade in / out based on a prop in a component and then extend it in layout.title and anchor
   * Ability to change to another random color theme
   * Store randoma11y themes on server to avoid having to make that slow call all the time
     * Update them with a daily cron job
