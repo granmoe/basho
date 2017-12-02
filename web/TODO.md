@@ -1,28 +1,18 @@
-# TODO:
+# TODO
 
-* Fancy text style for poem
-  * maybe small caps for first line if it looks cool
-  * maybe this https://css-tricks.com/snippets/css/drop-caps/
-  * first line starts align left, next align middle, last align right and make
-    sure it's responsive
-* Add basic explanation to about page
+## Frontend
 
-* Style fade in on everything but the haiku
+  * Keep theme the same between pages
+  * Fix minor style issues on "about" page
+  * Add tests once we have any non-trivial logic to test
 
-  * when mouse event happens onscreen change opacity slightly
-  * as mouse moves closer to button increase visibility
-  * have header <Title /> refresh and then fade out upon vote button click
-
-* Store randoma11y themes on server to avoid having to make that slow call all the time
-  * Update them with a daily cron job
-
-* COLLECT AND CLEAN DATA
+## Collect and Clean Data
 
   * Get all haikus by Basho
   * Get as many more haikus in the style of and of comparable quality to Basho
     as possible
 
-* Haiku Service
+## Haiku Service
 
   * Return a poem from python function
   * Get poem from python function in web app
@@ -31,12 +21,17 @@
     * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
   * Automatically integrate with AI model (cron job)
 
-* Add tests once we have any non-trivial logic to test
+## Optimizations
 
-* OPTIMIZATIONS
   * Cool favicon
   * Some image off screen so it shows up in thumbnails
   * Ability to change to another random color theme
+  * Store randoma11y themes on server to avoid having to make that slow call all the time
+    * Update them with a daily cron job
+  * 'dim' ideas ;-)
+    * when mouse event happens onscreen change opacity slightly
+    * as mouse moves closer to button increase visibility
+    * have header <Title /> refresh and then fade out upon vote button click
 
 # Notes:
 
