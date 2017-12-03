@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 import styled, { keyframes } from 'styled-components'
 import Anchor from './anchor'
-import { fadeIn, fadeOut } from './fade-in-out'
+import Fader from './fader'
 
 const Wrapper = styled.div`
   height: 100%;
@@ -24,7 +24,7 @@ const Header = styled.header`
   }
 `
 
-const Title = styled.div`
+const Title = Fader.extend`
   font-size: 12vw;
   font-family: 'tempura';
   @media screen and (max-width: 600px) {
@@ -33,9 +33,6 @@ const Title = styled.div`
   @media screen and (min-width: 1200px) {
     font-size: 9em;
   }
-
-  opacity: ${({isMouseActive}) => isMouseActive ? 1 : 0 };
-  animation: 1s ${props => props.isMouseActive ? fadeIn : fadeOut } ease-in-out;
 `
 
 const LINKS = [
@@ -52,10 +49,10 @@ const LINKS = [
 export default ({ children, isMouseActive }) => (
   <Wrapper>
     <Header>
-      <Title isMouseActive={ isMouseActive }>場所</Title>
+      <Title visible={ isMouseActive }>場所</Title>
       {LINKS.map(({ href, name }) => (
         <Link href={href} key={name} passHref prefetch>
-          <Anchor isMouseActive={ isMouseActive }>{name}</Anchor>
+          <Anchor visible={ isMouseActive }>{name}</Anchor>
         </Link>
       ))}
     </Header>

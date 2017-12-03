@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
-import {fadeIn, fadeOut} from './fade-in-out'
+import Fader from './fader'
 
-const Anchor = styled.a`
+const Anchor = Fader.withComponent('a').extend`
   text-decoration: none;
   font-size: 1.5em;
   flex: 0;
@@ -14,10 +14,7 @@ const Anchor = styled.a`
     text-decoration: none;
     color: inherit;
   }
-
-  opacity: ${({isMouseActive}) => isMouseActive ? 1 : 0 };
-  animation: 1s ${props => props.isMouseActive ? fadeIn : fadeOut } ease-in-out;
 `
 
-export default ({ children, href, isMouseActive }) =>
-  <Anchor isMouseActive={isMouseActive} href={href}>{children}</Anchor>
+export default ({ children, href, visible }) =>
+  <Anchor visible={visible} href={href}>{children}</Anchor>

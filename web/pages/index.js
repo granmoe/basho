@@ -4,20 +4,20 @@ import config from '../config'
 import Layout from '../components/layout'
 import withMouseActive from '../components/with-mouse-active'
 
-const Haiku = [
+const HAIKU = [
   'Blowing from the West',
   'the fallen leaves gather',
   'in the East',
 ]
 
-const HaikuWidth = Haiku.reduce((acc, current) => acc + current)
+const haikuCharCount = HAIKU.join('').length
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
   font-size: 1.5em;
   margin-top: 20vh;
-  width: ${HaikuWidth.length}vw;
-  max-width: ${HaikuWidth.length * 0.4}em;
+  width: ${haikuCharCount}vw;
+  max-width: ${haikuCharCount * 0.4}em;
   ::first-letter {
     font-size: 3em;
     font-family: 'tempura';
@@ -51,9 +51,9 @@ const HomePage = ({ theme, isMouseActive }) => (
   <ThemeProvider theme={theme}>
     <Layout isMouseActive={isMouseActive}>
       <ContentWrapper>
-        <Line align="left">{Haiku[0]}</Line>
-        <Line align="center">{Haiku[1]}</Line>
-        <Line align="right">{Haiku[2]}</Line>
+        <Line align="left">{HAIKU[0]}</Line>
+        <Line align="center">{HAIKU[1]}</Line>
+        <Line align="right">{HAIKU[2]}</Line>
         {config.enableButtons && (
           <div>
             <Button>Vote Down</Button>
