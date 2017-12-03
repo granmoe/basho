@@ -2,10 +2,8 @@
 
 ## Frontend
 
-  * Remove my event listeners in with-mouse-active.componentDidUnmount (oops)
   * Keep theme the same between pages
   * Fix minor style issues on "about" page
-  * Fix header not showing on "about" page (my fault)
   * Add tests once we have any non-trivial logic to test
 
 ## Collect and Clean Data
