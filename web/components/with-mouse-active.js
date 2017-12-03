@@ -16,6 +16,11 @@ export default Child => class withMouseActive extends Component {
     document.body.addEventListener('click', this.setMouseActive)
   }
 
+  componentWillUnmount () {
+    document.body.removeEventListener('mousemove', this.setMouseActive)
+    document.body.removeEventListener('click', this.setMouseActive)
+  }
+
   render () {
     return (
       <Child {...this.props} isMouseActive={this.state.isMouseActive} />
