@@ -18,20 +18,24 @@ const ContentWrapper = styled.div`
   margin-top: 20vh;
   width: ${haikuCharCount}vw;
   max-width: ${haikuCharCount * 0.4}em;
+
   ::first-letter {
     font-size: 3em;
     font-family: 'tempura';
     float: left;
     line-height: 1;
   }
+
   ::first-line {
     font-variant: small-caps;
   }
+
   @media screen and (max-width: 600px) {
     margin: 10vh auto;
     width: 80vw;
   }
 `
+
 const Line = styled.p`
   margin: 0.5em 0;
   text-align: ${props => props.align};
@@ -49,7 +53,7 @@ const Button = styled.button`
 
 const HomePage = ({ theme, isMouseActive }) => (
   <ThemeProvider theme={theme}>
-    <Layout isMouseActive={isMouseActive}>
+    <Layout isMouseActive={isMouseActive} page="home">
       <ContentWrapper>
         <Line align="left">{HAIKU[0]}</Line>
         <Line align="center">{HAIKU[1]}</Line>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import styled, { keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 import Anchor from './anchor'
+import FadableAnchor from './fadable-anchor'
 import Fader from './fader'
 
 const Wrapper = styled.div`
@@ -24,7 +25,7 @@ const Header = styled.header`
   }
 `
 
-const Title = Fader.extend`
+const titleCSS = css`
   font-size: 12vw;
   font-family: 'tempura';
   @media screen and (max-width: 600px) {
@@ -34,6 +35,10 @@ const Title = Fader.extend`
     font-size: 9em;
   }
 `
+
+const Title = styled.div`${titleCSS}`
+
+const FadableTitle = Fader.extend`${titleCSS}`
 
 const LINKS = [
   {
@@ -46,16 +51,21 @@ const LINKS = [
   },
 ]
 
-export default ({ children, isMouseActive }) => (
-  <Wrapper>
-    <Header>
-      <Title visible={ isMouseActive }>場所</Title>
-      {LINKS.map(({ href, name }) => (
-        <Link href={href} key={name} passHref prefetch>
-          <Anchor visible={ isMouseActive }>{name}</Anchor>
-        </Link>
-      ))}
-    </Header>
-    <main>{children}</main>
-  </Wrapper>
-)
+export default ({ children, isMouseActive, page }) => {
+  const TitleComponent = page === 'home' ? FadableTitle : Title
+  const AnchorComponent = page === 'home' ? FadableAnchor : Anchor
+
+  return (
+    <Wrapper>
+      <Header>
+        <TitleComponent visible={ isMouseActive }>場所</TitleComponent>
+        {LINKS.map(({ href, name }) => (
+          <Link href={href} key={name} passHref prefetch>
+            <AnchorComponent visible={ isMouseActive }>{name}</AnchorComponent>
+          </Link>
+        ))}
+      </Header>
+      <main>{children}</main>
+    </Wrapper>
+  )
+}
