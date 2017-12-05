@@ -2,39 +2,41 @@
 
 ## Frontend
 
-  * Keep theme the same between pages
-  * Fix minor style issues on "about" page
-  * Add tests once we have any non-trivial logic to test
-  * Fix meta for media query for mobile
-    * content="width=device-width, initial-scale=1"
+* Keep theme the same between pages
+* Fix minor style issues on "about" page
+* Add tests once we have any non-trivial logic to test
+* Fix meta for media query for mobile
+
 ## Collect and Clean Data
 
-  * Get all haikus by Basho
-  * Get as many more haikus in the style of and/or of comparable quality to Basho
-    as possible
+* Get all haikus by Basho
+* Get as many more haikus in the style of and/or of comparable quality to Basho
+  as possible
 
 ## Haiku Service
 
-  * Return a poem from python function
-  * Get poem from python function in web app
-  * Allow users to vote poem up/down or skip
-  * Bunch of DB work
-    * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
-  * Automatically integrate with AI model (cron job)
+* Return a poem from python function
+* Get poem from python function in web app
+* Allow users to vote poem up/down or skip
+* Bunch of DB work
+  * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
+* Automatically integrate with AI model (cron job)
 
 ## Optimizations
 
-  * Cool favicon
-  * Some image off screen so it shows up in thumbnails
-  * Could prob encapsulate fade in / out based on a prop in a component and then extend it in layout.title and anchor
-  * Ability to change to another random color theme
-  * Maybe some cool animation on the haiku itself
-  * Store randoma11y themes on server to avoid having to make that slow call all the time
-    * Update them with a daily cron job
-  * "dim" ideas ;-)
-    * when mouse event happens onscreen change opacity slightly
-    * as mouse moves closer to button increase visibility
-    * have header <Title /> refresh and then fade out upon vote button click
+* Cool favicon
+* Some image off screen so it shows up in thumbnails
+* Could prob encapsulate fade in / out based on a prop in a component and then
+  extend it in layout.title and anchor
+* Ability to change to another random color theme
+* Maybe some cool animation on the haiku itself
+* Store randoma11y themes on server to avoid having to make that slow call all
+  the time
+  * Update them with a daily cron job
+* "dim" ideas ;-)
+  * when mouse event happens onscreen change opacity slightly
+  * as mouse moves closer to button increase visibility
+  * have header <Title /> refresh and then fade out upon vote button click
 
 # Notes:
 
