@@ -17,6 +17,7 @@ export default Child => class withMouseActive extends Component {
   }
 
   componentWillUnmount () {
+    clearTimeout(this.state.timeoutId)
     document.body.removeEventListener('mousemove', this.setMouseActive)
     document.body.removeEventListener('click', this.setMouseActive)
   }

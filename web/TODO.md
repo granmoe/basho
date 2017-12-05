@@ -9,7 +9,7 @@
 ## Collect and Clean Data
 
   * Get all haikus by Basho
-  * Get as many more haikus in the style of and of comparable quality to Basho
+  * Get as many more haikus in the style of and/or of comparable quality to Basho
     as possible
 
 ## Haiku Service
@@ -27,6 +27,7 @@
   * Some image off screen so it shows up in thumbnails
   * Could prob encapsulate fade in / out based on a prop in a component and then extend it in layout.title and anchor
   * Ability to change to another random color theme
+  * Maybe some cool animation on the haiku itself
   * Store randoma11y themes on server to avoid having to make that slow call all the time
     * Update them with a daily cron job
   * "dim" ideas ;-)
