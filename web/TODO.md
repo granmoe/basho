@@ -5,7 +5,8 @@
   * Keep theme the same between pages
   * Fix minor style issues on "about" page
   * Add tests once we have any non-trivial logic to test
-
+  * Fix meta for media query for mobile
+    * content="width=device-width, initial-scale=1"
 ## Collect and Clean Data
 
   * Get all haikus by Basho
