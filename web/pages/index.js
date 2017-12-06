@@ -15,7 +15,7 @@ let haiku = HAIKUREPO[Math.floor(Math.random() * HAIKUREPO.length)]
 const haikuCharCount = haiku.join('').length
 
 const longestLine =
-  haiku[0].length > haiku[1].length && haiku[0].length > haiku[2]
+  haiku[0].length > haiku[1].length && haiku[0].length > haiku[2].length
     ? haiku[0].length
     : haiku[1].length > haiku[2].length ? haiku[1].length : haiku[2].length
 /* this looks ugly; is there a better way to write this comparison? It merely sorts which of the three lines is longest to give us a max-width for each poem.  The previous method was not scaleable for other poems; this is. */
