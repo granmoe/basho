@@ -4,20 +4,28 @@ import config from '../config'
 import Layout from '../components/layout'
 import withMouseActive from '../components/with-mouse-active'
 
-const HAIKU = [
-  'Blowing from the West',
-  'the fallen leaves gather',
-  'in the East',
+const HAIKUREPO = [
+  ['Blowing from the West', 'the fallen leaves gather', 'in the East'],
+  ['The old pond', 'A frog leaps in', 'Splash!'],
+  ['Jumping over the brook', 'for water', 'not needed'],
 ]
 
-const haikuCharCount = HAIKU.join('').length
+let haiku = HAIKUREPO[Math.floor(Math.random() * HAIKUREPO.length)]
+
+const haikuCharCount = haiku.join('').length
+
+const longestLine =
+  haiku[0].length > haiku[1].length && haiku[0].length > haiku[2]
+    ? haiku[0].length
+    : haiku[1].length > haiku[2].length ? haiku[1].length : haiku[2].length
+/* this looks ugly; is there a better way to write this comparison? It merely sorts which of the three lines is longest to give us a max-width for each poem.  The previous method was not scaleable for other poems; this is. */
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
   font-size: 1.5em;
   margin-top: 20vh;
   width: ${haikuCharCount}vw;
-  max-width: ${haikuCharCount * 0.4}em;
+  max-width: ${longestLine}em;
 
   ::first-letter {
     font-size: 3em;
@@ -55,9 +63,9 @@ const HomePage = ({ theme, isMouseActive }) => (
   <ThemeProvider theme={theme}>
     <Layout isMouseActive={isMouseActive} page="home">
       <ContentWrapper>
-        <Line align="left">{HAIKU[0]}</Line>
-        <Line align="center">{HAIKU[1]}</Line>
-        <Line align="right">{HAIKU[2]}</Line>
+        <Line align="left">{haiku[0]}</Line>
+        <Line align="center">{haiku[1]}</Line>
+        <Line align="right">{haiku[2]}</Line>
         {config.enableButtons && (
           <div>
             <Button>Vote Down</Button>

@@ -36,9 +36,13 @@ const titleCSS = css`
   }
 `
 
-const Title = styled.div`${titleCSS}`
+const Title = styled.div`
+  ${titleCSS};
+`
 
-const FadableTitle = Fader.extend`${titleCSS}`
+const FadableTitle = Fader.extend`
+  ${titleCSS};
+`
 
 const LINKS = [
   {
@@ -54,14 +58,13 @@ const LINKS = [
 export default ({ children, isMouseActive, page }) => {
   const TitleComponent = page === 'home' ? FadableTitle : Title
   const AnchorComponent = page === 'home' ? FadableAnchor : Anchor
-
   return (
     <Wrapper>
       <Header>
-        <TitleComponent visible={ isMouseActive }>場所</TitleComponent>
+        <TitleComponent visible={isMouseActive}>場所</TitleComponent>
         {LINKS.map(({ href, name }) => (
           <Link href={href} key={name} passHref prefetch>
-            <AnchorComponent visible={ isMouseActive }>{name}</AnchorComponent>
+            <AnchorComponent visible={isMouseActive}>{name}</AnchorComponent>
           </Link>
         ))}
       </Header>
