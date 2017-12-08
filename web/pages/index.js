@@ -1,5 +1,5 @@
 import 'isomorphic-unfetch'
-import styled, { ThemeProvider, keyframes } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import config from '../config'
 import Layout from '../components/layout'
 import withMouseActive from '../components/with-mouse-active'
