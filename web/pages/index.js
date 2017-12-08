@@ -10,21 +10,14 @@ const HAIKUREPO = [
   ['Jumping over the brook', 'for water', 'not needed'],
 ]
 
-let haiku = HAIKUREPO[Math.floor(Math.random() * HAIKUREPO.length)]
+const haiku = HAIKUREPO[Math.floor(Math.random() * HAIKUREPO.length)]
 
-const haikuCharCount = haiku.join('').length
-
-const longestLine =
-  haiku[0].length > haiku[1].length && haiku[0].length > haiku[2].length
-    ? haiku[0].length
-    : haiku[1].length > haiku[2].length ? haiku[1].length : haiku[2].length
-/* this looks ugly; is there a better way to write this comparison? It merely sorts which of the three lines is longest to give us a max-width for each poem.  The previous method was not scaleable for other poems; this is. */
+const longestLine = haiku.slice().sort((a, b) => b.length - a.length)[0].length
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
   font-size: 1.5em;
   margin-top: 20vh;
-  width: ${haikuCharCount}vw;
   max-width: ${longestLine}em;
 
   ::first-letter {
