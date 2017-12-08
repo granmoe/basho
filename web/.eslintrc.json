@@ -6,12 +6,12 @@
     "prettier/standard"
   ],
   "plugins": [
+    "standard",
     "react",
-    "prettier",
-    "jsx-a11y",
-    "standard"
+    "prettier"
   ],
   "parserOptions": {
+    "ecmaVersion": 8,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -19,7 +19,8 @@
   },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true
   },
   "rules": {
     "prettier/prettier": "error"
