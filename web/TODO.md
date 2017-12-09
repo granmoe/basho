@@ -3,8 +3,6 @@
 ## Frontend
 
 * Keep theme the same between pages
-* Fix minor style issues on "about" page
-* Add tests once we have any non-trivial logic to test
 * Fix meta for media query for mobile
 
 ## Collect and Clean Data
@@ -25,6 +23,7 @@
 ## Optimizations
 
 * Cool favicon
+* Add tests once we have any non-trivial logic to test
 * Some image off screen so it shows up in thumbnails
 * Could prob encapsulate fade in / out based on a prop in a component and then
   extend it in layout.title and anchor
@@ -53,6 +52,8 @@ styling)
 
 https://www.poetrygenerator.ninja/poem/a1a915bf94233c75 (poem styling) (AI poem
 generator)
+
+https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py
 
 Generate all haikus at once on the server using the deep learning model, up to a
 feasible limit of haikus (determined by faunadb pricing). Then let the voting
