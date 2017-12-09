@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Anchor = styled.a`
@@ -15,5 +14,4 @@ const Anchor = styled.a`
   }
 `
 
-export default ({ children, href }) =>
-  <Anchor href={href}>{children}</Anchor>
+export default ({ children, href }) => <Anchor href={href}>{children}</Anchor>

@@ -2,13 +2,12 @@
   "extends": [
     "standard",
     "prettier",
-    "prettier/react",
-    "prettier/standard"
+    "prettier/standard",
+    "prettier/react"
   ],
   "plugins": [
     "standard",
-    "react",
-    "prettier"
+    "react"
   ],
   "parserOptions": {
     "ecmaVersion": 8,
@@ -23,7 +22,6 @@
     "browser": true
   },
   "rules": {
-    "prettier/prettier": "error",
-    "react/jsx-uses-vars": 2
+    "react/jsx-uses-vars": "error"
   }
 }

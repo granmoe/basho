@@ -40,6 +40,12 @@
 
 # Notes:
 
+## Haiku Data
+
+http://www.tempslibres.org/tl/en/dbhk00.html
+
+## Misc
+
 functionally structured like randoma11y.com (but not necessarily the same look)
 
 http://webdesignernotebook.com/examples/twinkle-twinkle.html (shows poem
