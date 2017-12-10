@@ -1,14 +1,7 @@
 {
-  "extends": [
-    "standard",
-    "prettier",
-    "prettier/standard",
-    "prettier/react"
-  ],
-  "plugins": [
-    "standard",
-    "react"
-  ],
+  "parser": "babel-eslint",
+  "extends": ["standard", "prettier", "prettier/standard", "prettier/react"],
+  "plugins": ["standard", "react"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
