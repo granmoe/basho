@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-import styled, { keyframes } from 'styled-components'
 import Fader from './fader'
 
 const Anchor = Fader.withComponent('a').extend`
@@ -16,5 +14,8 @@ const Anchor = Fader.withComponent('a').extend`
   }
 `
 
-export default ({ children, href, visible }) =>
-  <Anchor visible={visible} href={href}>{children}</Anchor>
+export default ({ children, href, visible }) => (
+  <Anchor visible={visible} href={href}>
+    {children}
+  </Anchor>
+)

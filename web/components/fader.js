@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -11,6 +11,6 @@ const fadeOut = keyframes`
 `
 
 export default styled.div`
-  opacity: ${({visible}) => visible ? 1 : 0 };
-  animation: 1s ${({visible}) => visible ? fadeIn : fadeOut } ease-in-out;
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  animation: 1s ${({ visible }) => (visible ? fadeIn : fadeOut)} ease-in-out;
 `

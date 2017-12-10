@@ -1,5 +1,5 @@
 import Layout from '../components/layout'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const ABOUT = styled.div`
   text-align: center;

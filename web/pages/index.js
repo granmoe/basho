@@ -1,6 +1,6 @@
 import 'isomorphic-unfetch'
 import styled, { ThemeProvider } from 'styled-components'
-import config from '../config'
+import config from '../config.json'
 import Layout from '../components/layout'
 import withMouseActive from '../components/with-mouse-active'
 
