@@ -2,8 +2,9 @@
 
 ## Frontend
 
-* Keep theme the same between pages
-* Fix meta for media query for mobile
+* Keep theme the same between pages (Matt)
+* Touch events not working on phone (Matt)
+* Fix meta for media query for mobile (Tim)
 
 ## Collect and Clean Data
 
