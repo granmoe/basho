@@ -15,5 +15,4 @@ const Anchor = styled.a`
   }
 `
 
-export default ({ children, href }) =>
-  <Anchor href={href}>{children}</Anchor>
+export default ({ children, href }) => <Anchor href={href}>{children}</Anchor>
