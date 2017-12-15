@@ -1,15 +1,7 @@
 {
-  "extends": [
-    "standard",
-    "prettier",
-    "prettier/react",
-    "prettier/standard"
-  ],
-  "plugins": [
-    "standard",
-    "react",
-    "prettier"
-  ],
+  "parser": "babel-eslint",
+  "extends": ["standard", "prettier", "prettier/standard", "prettier/react"],
+  "plugins": ["standard", "react"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
@@ -23,7 +15,6 @@
     "browser": true
   },
   "rules": {
-    "prettier/prettier": "error",
-    "react/jsx-uses-vars": 2
+    "react/jsx-uses-vars": "error"
   }
 }

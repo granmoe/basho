@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import Anchor from './anchor'
@@ -58,6 +57,7 @@ const LINKS = [
 export default ({ children, isMouseActive, page }) => {
   const TitleComponent = page === 'home' ? FadableTitle : Title
   const AnchorComponent = page === 'home' ? FadableAnchor : Anchor
+
   return (
     <Wrapper>
       <Header>
