@@ -31,8 +31,7 @@ const AboutPage = ({ theme }) => (
 )
 
 // get top 100 color combos from randoma11y and pseudo-randomly pick one
-AboutPage.getInitialProps = async ({ store, req, isServer }) => {
-  console.log('IS SERVER', isServer)
+AboutPage.getInitialProps = async ({ store, req }) => {
   const state = store.getState()
   if (Object.keys(state.theme).length) {
     return
