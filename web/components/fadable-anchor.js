@@ -5,6 +5,7 @@ const Anchor = Fader.withComponent('a').extend`
   font-size: 1.5em;
   flex: 0;
   padding-bottom: 0.5em;
+  cursor: pointer;
 
   :active,
   :focus,
@@ -14,8 +15,10 @@ const Anchor = Fader.withComponent('a').extend`
   }
 `
 
-export default ({ children, href, visible }) => (
-  <Anchor visible={visible} href={href}>
+// Stealthily making next.js client-side routing work by stealing the onClick from <Link /> and
+// reapplying it. It's stupid that we have to do this...should submit an issue or a PR to next.js
+export default ({ children, visible, onClick }) => (
+  <Anchor visible={visible} onClick={onClick}>
     {children}
   </Anchor>
 )

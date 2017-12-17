@@ -2,7 +2,6 @@
 
 ## Frontend
 
-* Keep theme the same between pages (Matt)
 * Touch events not working on phone (Matt)
 * Fix meta for media query for mobile (Tim)
 
@@ -11,6 +10,7 @@
 * Get all haikus by Basho
 * Get as many more haikus in the style of and/or of comparable quality to Basho
   as possible
+* If available data is too low, consider using transfer learning
 
 ## Haiku Service
 
@@ -24,6 +24,7 @@
 ## Optimizations
 
 * Cool favicon
+* Custom \_errors.js page that matches our theme (see next.js docs)
 * Add tests once we have any non-trivial logic to test
 * Some image off screen so it shows up in thumbnails
 * Could prob encapsulate fade in / out based on a prop in a component and then

@@ -5,6 +5,7 @@ const Anchor = styled.a`
   font-size: 1.5em;
   flex: 0;
   padding-bottom: 0.5em;
+  cursor: pointer;
 
   :active,
   :focus,
@@ -14,4 +15,6 @@ const Anchor = styled.a`
   }
 `
 
-export default ({ children, href }) => <Anchor href={href}>{children}</Anchor>
+export default ({ children, onClick }) => (
+  <Anchor onClick={onClick}>{children}</Anchor>
+)
