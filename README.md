@@ -1,0 +1,2 @@
+# basho
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4e42de502c424560a99903dc8288087e)](https://www.codacy.com/app/mattgranmoe/basho?utm_source=github.com&utm_medium=referral&utm_content=granmoe/basho&utm_campaign=badger)
