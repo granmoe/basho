@@ -26,4 +26,5 @@ jobs:
           command: |
               now -t ${NOW_TOKEN} --debug &>> now-debug-log.txt
               now -t ${NOW_TOKEN} alias --debug &>> now-debug-log.txt
+              mv now-debug-log.txt $CIRCLE_ARTIFACTS
  
