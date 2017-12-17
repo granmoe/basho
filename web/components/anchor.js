@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { withRouter } from 'next/router'
 
-const Anchor = styled.a`
+const StyledAnchor = styled.a`
   text-decoration: none;
   font-size: 1.5em;
   flex: 0;
@@ -15,6 +16,13 @@ const Anchor = styled.a`
   }
 `
 
-export default ({ children, onClick }) => (
-  <Anchor onClick={onClick}>{children}</Anchor>
-)
+const Anchor = ({ children, router, href }) => {
+  const handleClick = e => {
+    e.preventDefault()
+    router.push(href)
+  }
+
+  return <StyledAnchor onClick={handleClick}>{children}</StyledAnchor>
+}
+
+export default withRouter(Anchor)

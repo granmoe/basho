@@ -7,7 +7,6 @@ const initialState = {
 const reducer = (state = initialState, { type, data }) => {
   switch (type) {
     case 'SET_THEME':
-      console.log(data, type)
       return data
     default:
       return state
