@@ -24,6 +24,7 @@ jobs:
       - deploy:
           working_directory: web
           command: |
-              now -t ${NOW_TOKEN}
-              now -t ${NOW_TOKEN} alias
+              echo $NOW_TOKEN
+              now -t ${NOW_TOKEN} --debug
+              now -t ${NOW_TOKEN} alias --debug
  
