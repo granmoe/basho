@@ -4,7 +4,8 @@
 
 * Keep theme the same between pages (Matt)
 * Touch events not working on phone (Matt)
-* Fix meta for media query for mobile (Tim)
+* Change media queries
+  * center haiku in all sized screens; vh/vw not working as expected (idunno?)
 
 ## Collect and Clean Data
 
