@@ -1,5 +1,8 @@
 import 'isomorphic-unfetch'
+import withRedux from 'next-redux-wrapper'
+import initializeStore from '../store'
 import styled, { ThemeProvider } from 'styled-components'
+
 import config from '../config.json'
 import Layout from '../components/layout'
 import withMouseActive from '../components/with-mouse-active'
@@ -71,13 +74,23 @@ const HomePage = ({ theme, isMouseActive }) => (
 )
 
 // get top 100 color combos from randoma11y and pseudo-randomly pick one
-HomePage.getInitialProps = async ({ req }) => {
+HomePage.getInitialProps = async ({ store, req }) => {
+  const state = store.getState()
+  if (Object.keys(state.theme).length) {
+    return
+  }
+
   const res = await fetch('https://randoma11y.com/combos/top')
   const json = await res.json()
   const randomTheme = json[Math.floor(Math.random() * json.length)]
-  return {
-    theme: { primary: randomTheme.color_one, secondary: randomTheme.color_two },
+  const theme = {
+    primary: randomTheme.color_one,
+    secondary: randomTheme.color_two,
   }
+
+  store.dispatch({ type: 'SET_THEME', data: { theme } })
 }
 
-export default withMouseActive(HomePage)
+export default withRedux(initializeStore, state => ({
+  theme: state.theme,
+}))(withMouseActive(HomePage))

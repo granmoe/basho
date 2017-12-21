@@ -63,7 +63,7 @@ export default ({ children, isMouseActive, page }) => {
       <Header>
         <TitleComponent visible={isMouseActive}>場所</TitleComponent>
         {LINKS.map(({ href, name }) => (
-          <Link href={href} key={name} passHref prefetch>
+          <Link href={href} key={name} prefetch passHref>
             <AnchorComponent visible={isMouseActive}>{name}</AnchorComponent>
           </Link>
         ))}
