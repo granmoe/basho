@@ -2,7 +2,6 @@
 
 ## Frontend
 
-* Touch events not working on phone (Matt)
 * Change media queries
   * center haiku in all sized screens; vh/vw not working as expected (idunno?)
 
@@ -40,7 +39,7 @@
   * as mouse moves closer to button increase visibility
   * have header <Title /> refresh and then fade out upon vote button click
 
-# Notes:
+# Notes
 
 ## Haiku Data
 
