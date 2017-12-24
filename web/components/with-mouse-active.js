@@ -13,14 +13,14 @@ export default Child =>
 
     componentDidMount() {
       this.setMouseActive()
-      document.body.addEventListener('ontouchstart', this.setMouseActive)
+      document.body.addEventListener('touchstart', this.setMouseActive)
       document.body.addEventListener('mousemove', this.setMouseActive)
       document.body.addEventListener('click', this.setMouseActive)
     }
 
     componentWillUnmount() {
       clearTimeout(this.state.timeoutId)
-      document.body.addEventListener('ontouchstart', this.setMouseActive)
+      document.body.removeEventListener('touchstart', this.setMouseActive)
       document.body.removeEventListener('mousemove', this.setMouseActive)
       document.body.removeEventListener('click', this.setMouseActive)
     }
