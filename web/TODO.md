@@ -1,5 +1,9 @@
 # TODO
 
+## General
+
+* Switch to Travis CI and follow these instructions: https://zeit.co/docs/examples/travis
+
 ## Frontend
 
 * Change media queries
@@ -23,6 +27,10 @@
 
 ## Optimizations
 
+* Store randoma11y themes on server to avoid having to make that slow call all
+  the time
+  * Update them with a daily cron job
+* Make links un-clickable (or clickable but don't go to route) when not visible
 * Cool favicon
 * Custom \_errors.js page that matches our theme (see next.js docs)
 * Add tests once we have any non-trivial logic to test
@@ -31,9 +39,6 @@
   extend it in layout.title and anchor
 * Ability to change to another random color theme
 * Maybe some cool animation on the haiku itself
-* Store randoma11y themes on server to avoid having to make that slow call all
-  the time
-  * Update them with a daily cron job
 * "dim" ideas ;-)
   * when mouse event happens onscreen change opacity slightly
   * as mouse moves closer to button increase visibility

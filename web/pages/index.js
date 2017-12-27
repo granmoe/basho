@@ -1,23 +1,24 @@
 import 'isomorphic-unfetch'
 import withRedux from 'next-redux-wrapper'
-import initializeStore from '../store'
 import styled, { ThemeProvider } from 'styled-components'
 
+import initializeStore, { changeTheme } from '../store'
 import config from '../config.json'
-import Layout from '../components/layout'
 import withMouseActive from '../components/with-mouse-active'
+import Fader from '../components/fader'
+import Layout from '../components/layout'
 
-const HAIKUREPO = [
+const HAIKU_REPO = [
   ['Blowing from the West', 'the fallen leaves gather', 'in the East'],
   ['The old pond', 'A frog leaps in', 'Splash!'],
   ['Jumping over the brook', 'for water', 'not needed'],
 ]
 
-const haiku = HAIKUREPO[Math.floor(Math.random() * HAIKUREPO.length)]
+const haiku = HAIKU_REPO[Math.floor(Math.random() * HAIKU_REPO.length)]
 
 const longestLine = haiku.slice().sort((a, b) => b.length - a.length)[0].length
 
-const ContentWrapper = styled.div`
+const HaikuWrapper = styled.div`
   margin: 0 auto;
   font-size: 1.5em;
   margin-top: 20vh;
@@ -40,6 +41,11 @@ const ContentWrapper = styled.div`
   }
 `
 
+const ButtonsWrapper = Fader.extend`
+  text-align: center;
+  margin-top: 5em;
+`
+
 const Line = styled.p`
   margin: 0.5em 0;
   text-align: ${props => props.align};
@@ -49,26 +55,30 @@ const Button = styled.button`
   color: ${({ theme }) => theme.primary};
   background-color: ${({ theme }) => theme.secondary};
   margin: 1em;
-  border-radius: 0px;
-  border: 1px solid ${({ theme }) => theme.primary};
-  height: 5em;
-  width: 7em;
+  border-radius: 3px;
+  border: 2px solid ${({ theme }) => theme.primary};
+  padding: 1em;
+  font-family: 'fondamento-regular';
+  font-size: 1.25em;
+  cursor: pointer;
+  outline: none;
 `
 
-const HomePage = ({ theme, isMouseActive }) => (
+const HomePage = ({ theme, isMouseActive, changeTheme }) => (
   <ThemeProvider theme={theme}>
     <Layout isMouseActive={isMouseActive} page="home">
-      <ContentWrapper>
+      <HaikuWrapper>
         <Line align="left">{haiku[0]}</Line>
         <Line align="center">{haiku[1]}</Line>
         <Line align="right">{haiku[2]}</Line>
-        {config.enableButtons && (
-          <div>
-            <Button>Vote Down</Button>
-            <Button>Vote Up</Button>
-          </div>
-        )}
-      </ContentWrapper>
+      </HaikuWrapper>
+      <ButtonsWrapper visible={isMouseActive}>
+        <Button onClick={changeTheme}>Change Theme</Button>
+        {config.enableVotingButtons && [
+          <Button>Vote Down</Button>,
+          <Button>Vote Up</Button>,
+        ]}
+      </ButtonsWrapper>
     </Layout>
   </ThemeProvider>
 )
@@ -82,15 +92,16 @@ HomePage.getInitialProps = async ({ store, req }) => {
 
   const res = await fetch('https://randoma11y.com/combos/top')
   const json = await res.json()
-  const randomTheme = json[Math.floor(Math.random() * json.length)]
-  const theme = {
-    primary: randomTheme.color_one,
-    secondary: randomTheme.color_two,
-  }
-
-  store.dispatch({ type: 'SET_THEME', data: { theme } })
+  store.dispatch({ type: 'LOAD_THEMES', data: json })
+  store.dispatch(changeTheme())
 }
 
-export default withRedux(initializeStore, state => ({
-  theme: state.theme,
-}))(withMouseActive(HomePage))
+export default withRedux(
+  initializeStore,
+  state => ({
+    theme: state.theme,
+  }),
+  {
+    changeTheme,
+  },
+)(withMouseActive(HomePage))
