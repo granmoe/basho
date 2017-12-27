@@ -30,7 +30,6 @@
 * Store randoma11y themes on server to avoid having to make that slow call all
   the time
   * Update them with a daily cron job
-* Make links un-clickable (or clickable but don't go to route) when not visible
 * Cool favicon
 * Custom \_errors.js page that matches our theme (see next.js docs)
 * Add tests once we have any non-trivial logic to test
