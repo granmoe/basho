@@ -21,18 +21,20 @@
   * https://github.com/serverless/examples/tree/master/aws-python-rest-api-with-faunadb
 * Automatically integrate with AI model (cron job)
 
+## Deep Learning
+
+* TODO
+
 ## Optimizations
 
 * Store randoma11y themes on server to avoid having to make that slow call all
   the time
   * Update them with a daily cron job
+* Eliminate flicker when navigating from about -> home
 * Cool favicon
 * Custom \_errors.js page that matches our theme (see next.js docs)
 * Add tests once we have any non-trivial logic to test
 * Some image off screen so it shows up in thumbnails
-* Could prob encapsulate fade in / out based on a prop in a component and then
-  extend it in layout.title and anchor
-* Ability to change to another random color theme
 * Maybe some cool animation on the haiku itself
 * "dim" ideas ;-)
   * when mouse event happens onscreen change opacity slightly
