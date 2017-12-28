@@ -1,9 +1,5 @@
 # TODO
 
-## General
-
-* Switch to Travis CI and follow these instructions: https://zeit.co/docs/examples/travis
-
 ## Frontend
 
 * Change media queries
