@@ -3,6 +3,7 @@ node_js:
   - "node"
 cache: npm
 script:
+  - npm i -g now
   - cd web
   - npm i
   - npm run build
