@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now -e NODE_ENV=production --token=$NOW_TOKEN --npm",
+    "alias": "now alias --token=$NOW_TOKEN"
   },
   "now": {
     "alias": "basho.ai"
