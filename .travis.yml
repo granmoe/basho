@@ -2,10 +2,9 @@ language: node_js
 node_js:
   - "node"
 cache: npm
-before_install: cd web
-install: npm i
-before_script: cd web
 script:
+  - cd web
+  - npm i
   - npm run build
   - npm run deploy
-after_script: npm run alias
+  - npm run alias
