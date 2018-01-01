@@ -19,6 +19,7 @@ const Header = styled.header`
   height: 10em;
   @media screen and (max-width: 600px) {
     padding: 15vw 1em;
+    margin: auto;
     font-size: 0.8em;
     flex-direction: column;
   }
