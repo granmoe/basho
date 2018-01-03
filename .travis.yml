@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "node"
+cache: npm
+script:
+  - npm i -g now
+  - cd web
+  - npm i
+  - npm run build
+  - npm run deploy
+  - npm run alias

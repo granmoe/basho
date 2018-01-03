@@ -18,6 +18,7 @@ const Anchor = Fader.withComponent('a').extend`
 
 const FadableAnchor = ({ children, visible, router, href }) => {
   const handleClick = e => {
+    if (!visible) return
     e.preventDefault()
     router.push(href)
   }
