@@ -25,7 +25,7 @@
 ## Optimizations
 
 * Cool favicon
-* Custom \_errors.js page that matches our theme (see next.js docs)
+* Custom _errors.js page that matches our theme (see next.js docs)
 * Add tests once we have any non-trivial logic to test
 * Some image off screen so it shows up in thumbnails
 * Could prob encapsulate fade in / out based on a prop in a component and then
