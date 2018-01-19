@@ -2,8 +2,7 @@
 
 ## Frontend
 
-* Change media queries
-  * center haiku in all sized screens; vh/vw not working as expected (idunno?)
+* Background rendering in Safari-mobile only to height of initial viewport; a fix is in the woiks!
 
 ## Collect and Clean Data
 
@@ -32,7 +31,7 @@
   * Update them with a daily cron job
 * Eliminate flicker when navigating from about -> home
 * Cool favicon
-* Custom _errors.js page that matches our theme (see next.js docs)
+* Custom \_errors.js page that matches our theme (see next.js docs)
 * Add tests once we have any non-trivial logic to test
 * Some image off screen so it shows up in thumbnails
 * Maybe some cool animation on the haiku itself
