@@ -1,7 +1,6 @@
 import 'isomorphic-unfetch'
 import withRedux from 'next-redux-wrapper'
 import styled, { ThemeProvider } from 'styled-components'
-
 import initializeStore, { changeTheme } from '../store'
 import config from '../config.json'
 import withMouseActive from '../components/with-mouse-active'
@@ -21,29 +20,29 @@ const longestLine = haiku.slice().sort((a, b) => b.length - a.length)[0].length
 const HaikuWrapper = styled.div`
   margin: auto;
   font-size: 1.5em;
-  width: ${longestLine}em;
+  width: ${longestLine * 0.8}em;
   max-width: ${longestLine}em;
-
   ::first-letter {
     font-size: 3em;
     font-family: 'tempura';
     float: left;
     line-height: 1;
   }
-
   ::first-line {
     font-variant: small-caps;
   }
-
   @media screen and (max-width: 600px) {
+    font-size: 1.2em;
     margin: 10vh auto;
-    width: 80vw;
+    max-width: 90vw;
   }
 `
 
 const ButtonsWrapper = Fader.extend`
   text-align: center;
   margin-top: 5em;
+  display: flex;
+  flex-direction: row;
 `
 
 const Line = styled.p`
