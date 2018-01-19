@@ -40,7 +40,7 @@ const HaikuWrapper = styled.div`
 
 const ButtonsWrapper = Fader.extend`
   text-align: center;
-  margin-top: 5em;
+  margin-top: 3em;
   display: flex;
   flex-direction: row;
 `
@@ -54,14 +54,17 @@ const Button = styled.button`
   color: ${({ theme }) => theme.primary};
   background-color: ${({ theme }) => theme.secondary};
   margin: 1em;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 2px solid ${({ theme }) => theme.secondary};
-  box-shadow: 0px 0px 10px ${({ theme }) => theme.primary};
-  padding: 1em;
+  box-shadow: 0px 0px 20px ${({ theme }) => theme.primary};
+  padding: 0.7em 1em;
   font-family: 'fondamento-regular';
   font-size: 1.25em;
   cursor: pointer;
   outline: none;
+  @media screen and (max-width: 600px) {
+    font-size: 1em;
+  }
 `
 
 const HomePage = ({ theme, isMouseActive, changeTheme }) => (
