@@ -5,7 +5,8 @@ import FadableAnchor from './fadable-anchor'
 import Fader from './fader'
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.primary};
 `

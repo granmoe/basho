@@ -2,7 +2,7 @@
 
 ## Frontend
 
-* Background rendering in Safari-mobile only to height of initial viewport; a fix is in the woiks!
+* Voting buttons
 
 ## Collect and Clean Data
 
