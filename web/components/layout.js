@@ -5,7 +5,8 @@ import FadableAnchor from './fadable-anchor'
 import Fader from './fader'
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.primary};
 `
@@ -19,6 +20,7 @@ const Header = styled.header`
   height: 10em;
   @media screen and (max-width: 600px) {
     padding: 15vw 1em;
+    margin: auto;
     font-size: 0.8em;
     flex-direction: column;
   }
@@ -28,7 +30,7 @@ const titleCSS = css`
   font-size: 12vw;
   font-family: 'tempura';
   @media screen and (max-width: 600px) {
-    font-size 25vw;
+    font-size: 25vw;
   }
   @media screen and (min-width: 1200px) {
     font-size: 9em;
@@ -41,6 +43,15 @@ const Title = styled.div`
 
 const FadableTitle = Fader.extend`
   ${titleCSS};
+`
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10vh auto;
+  @media screen and (max-width: 600px) {
+    margin: auto;
+  }
 `
 
 const LINKS = [
@@ -68,7 +79,7 @@ export default ({ children, isMouseActive, page }) => {
           </Link>
         ))}
       </Header>
-      <main>{children}</main>
+      <Main>{children}</Main>
     </Wrapper>
   )
 }

@@ -2,8 +2,7 @@
 
 ## Frontend
 
-* Change media queries
-  * center haiku in all sized screens; vh/vw not working as expected (idunno?)
+* Voting buttons
 
 ## Collect and Clean Data
 

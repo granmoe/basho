@@ -1,7 +1,6 @@
 import 'isomorphic-unfetch'
 import withRedux from 'next-redux-wrapper'
 import styled, { ThemeProvider } from 'styled-components'
-
 import initializeStore, { changeTheme } from '../store'
 import config from '../config.json'
 import Mouse from '../components/mouse'
@@ -19,31 +18,31 @@ const haiku = HAIKU_REPO[Math.floor(Math.random() * HAIKU_REPO.length)]
 const longestLine = haiku.slice().sort((a, b) => b.length - a.length)[0].length
 
 const HaikuWrapper = styled.div`
-  margin: 0 auto;
+  margin: auto;
   font-size: 1.5em;
-  margin-top: 20vh;
+  width: ${longestLine * 0.8}em;
   max-width: ${longestLine}em;
-
   ::first-letter {
     font-size: 3em;
     font-family: 'tempura';
     float: left;
     line-height: 1;
   }
-
   ::first-line {
     font-variant: small-caps;
   }
-
   @media screen and (max-width: 600px) {
+    font-size: 1.2em;
     margin: 10vh auto;
-    width: 80vw;
+    max-width: 90vw;
   }
 `
 
 const ButtonsWrapper = Fader.extend`
   text-align: center;
-  margin-top: 5em;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: row;
 `
 
 const Line = styled.p`
@@ -55,13 +54,17 @@ const Button = styled.button`
   color: ${({ theme }) => theme.primary};
   background-color: ${({ theme }) => theme.secondary};
   margin: 1em;
-  border-radius: 3px;
-  border: 2px solid ${({ theme }) => theme.primary};
-  padding: 1em;
+  border-radius: 20px;
+  border: 2px solid ${({ theme }) => theme.secondary};
+  box-shadow: 0px 0px 20px ${({ theme }) => theme.primary};
+  padding: 0.7em 1em;
   font-family: 'fondamento-regular';
   font-size: 1.25em;
   cursor: pointer;
   outline: none;
+  @media screen and (max-width: 600px) {
+    font-size: 1em;
+  }
 `
 
 const HomePage = ({ theme, changeTheme }) => (
@@ -70,7 +73,9 @@ const HomePage = ({ theme, changeTheme }) => (
       {isMouseActive => (
         <Layout isMouseActive={isMouseActive} page="home">
           <HaikuWrapper>
-            <Line align="left">{haiku[0]}</Line>
+            <Line align="left" first>
+              {haiku[0]}
+            </Line>
             <Line align="center">{haiku[1]}</Line>
             <Line align="right">{haiku[2]}</Line>
           </HaikuWrapper>
