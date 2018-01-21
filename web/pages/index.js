@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import initializeStore, { changeTheme } from '../store'
 import config from '../config.json'
-import withMouseActive from '../components/with-mouse-active'
+import Mouse from '../components/mouse'
 import Fader from '../components/fader'
 import Layout from '../components/layout'
 
@@ -64,22 +64,26 @@ const Button = styled.button`
   outline: none;
 `
 
-const HomePage = ({ theme, isMouseActive, changeTheme }) => (
+const HomePage = ({ theme, changeTheme }) => (
   <ThemeProvider theme={theme}>
-    <Layout isMouseActive={isMouseActive} page="home">
-      <HaikuWrapper>
-        <Line align="left">{haiku[0]}</Line>
-        <Line align="center">{haiku[1]}</Line>
-        <Line align="right">{haiku[2]}</Line>
-      </HaikuWrapper>
-      <ButtonsWrapper visible={isMouseActive}>
-        <Button onClick={changeTheme}>Change Theme</Button>
-        {config.enableVotingButtons && [
-          <Button>Vote Down</Button>,
-          <Button>Vote Up</Button>,
-        ]}
-      </ButtonsWrapper>
-    </Layout>
+    <Mouse>
+      {isMouseActive => (
+        <Layout isMouseActive={isMouseActive} page="home">
+          <HaikuWrapper>
+            <Line align="left">{haiku[0]}</Line>
+            <Line align="center">{haiku[1]}</Line>
+            <Line align="right">{haiku[2]}</Line>
+          </HaikuWrapper>
+          <ButtonsWrapper visible={isMouseActive}>
+            <Button onClick={changeTheme}>Change Theme</Button>
+            {config.enableVotingButtons && [
+              <Button>Vote Down</Button>,
+              <Button>Vote Up</Button>,
+            ]}
+          </ButtonsWrapper>
+        </Layout>
+      )}
+    </Mouse>
   </ThemeProvider>
 )
 
@@ -104,4 +108,4 @@ export default withRedux(
   {
     changeTheme,
   },
-)(withMouseActive(HomePage))
+)(HomePage)
