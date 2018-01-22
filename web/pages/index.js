@@ -35,7 +35,7 @@ const HaikuWrapper = styled.div`
     margin: 6vh auto;
     max-width: 90vw;
   }
-  @media all and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-height: 415px) {
     margin: 2em 0 1em 0;
     font-size: 1.4em;
   }
@@ -49,7 +49,7 @@ const ButtonsWrapper = Fader.extend`
   @media screen and (max-width: 600px) {
     margin-top: 2vh;
   }
-  @media all and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-height: 415px) {
     margin: 0;
   }
 `
@@ -57,7 +57,7 @@ const ButtonsWrapper = Fader.extend`
 const Line = styled.p`
   margin: 0.5em 0;
   text-align: ${props => props.align};
-  @media all and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-height: 415px) {
     text-align: left;
     margin-left: ${props => (props.align === 'left' ? '0' : '2.5em')};
   }

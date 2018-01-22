@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   min-height: 100%;
   background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.primary};
-  @media all and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-height: 415px) {
     display: flex;
     flex-direction: row;
   }
@@ -26,7 +26,7 @@ const Header = styled.header`
     font-size: 0.8em;
     flex-direction: column;
   }
-  @media all and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-height: 415px) {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -42,7 +42,7 @@ const titleCSS = css`
   @media screen and (max-width: 600px) {
     font-size: 20vw;
   }
-  @media all and (orientation: landscape) {
+  @media screen and (orientation: landscape) and (max-height: 415px) and (max-height: 415px) {
     font-size: 16vh;
     margin: 0 0 48px 0;
   }
