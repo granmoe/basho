@@ -17,6 +17,7 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: flex;
+  margin: auto;
   font-size: 1em;
   justify-content: space-around;
   align-items: center;
@@ -36,11 +37,10 @@ const Header = styled.header`
 `
 
 const titleCSS = css`
-  flex: 1;
   font-size: 12vw;
   font-family: 'tempura';
   @media screen and (max-width: 600px) {
-    font-size: 10vw;
+    font-size: 20vw;
   }
   @media all and (orientation: landscape) {
     font-size: 16vh;
