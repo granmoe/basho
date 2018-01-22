@@ -59,7 +59,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15vh auto;
+  margin: 15vh auto auto auto;
   @media screen and (max-width: 600px) {
     margin: auto;
   }
