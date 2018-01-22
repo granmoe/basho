@@ -33,31 +33,45 @@ const HaikuWrapper = styled.div`
   }
   @media screen and (max-width: 600px) {
     font-size: 1.2em;
-    margin: 10vh auto;
+    margin: 6vh auto;
     max-width: 90vw;
+  }
+  @media all and (orientation: landscape) {
+    margin: 2em 0;
+    font-size: 1.4em;
   }
 `
 
 const ButtonsWrapper = Fader.extend`
   text-align: center;
-  margin-top: 3em;
   display: flex;
   flex-direction: row;
+  margin-top: 20vh;
+  @media screen and (max-width: 600px) {
+    margin-top: 2vh;
+  }
+  @media all and (orientation: landscape) {
+    margin: 0;
+  }
 `
 
 const Line = styled.p`
   margin: 0.5em 0;
   text-align: ${props => props.align};
+  @media all and (orientation: landscape) {
+    text-align: left;
+    margin-left: ${props => (props.align === 'left' ? '0' : '2.5em')};
+  }
 `
 
 const Button = styled.button`
   color: ${({ theme }) => theme.primary};
   background-color: ${({ theme }) => theme.secondary};
   margin: 1em;
-  border-radius: 20px;
+  border-radius: 8px;
   border: 2px solid ${({ theme }) => theme.secondary};
-  box-shadow: 0px 0px 20px ${({ theme }) => theme.primary};
-  padding: 0.7em 1em;
+  box-shadow: 0px 0px 6px ${({ theme }) => theme.primary};
+  padding: 0.3em 1em;
   font-family: 'fondamento-regular';
   font-size: 1.25em;
   cursor: pointer;

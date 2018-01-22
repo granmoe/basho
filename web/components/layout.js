@@ -9,31 +9,42 @@ const Wrapper = styled.div`
   min-height: 100%;
   background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.primary};
+  @media all and (orientation: landscape) {
+    display: flex;
+    flex-direction: row;
+  }
 `
 
 const Header = styled.header`
-  padding: 3vw 0 0 0;
   display: flex;
-  font-size: 1.5;
+  font-size: 1em;
   justify-content: space-around;
   align-items: center;
-  height: 10em;
   @media screen and (max-width: 600px) {
-    padding: 15vw 1em;
     margin: auto;
     font-size: 0.8em;
     flex-direction: column;
   }
+  @media all and (orientation: landscape) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60px;
+    font-size: 0.8em;
+    margin: 48px 32px;
+  }
 `
 
 const titleCSS = css`
+  flex: 1;
   font-size: 12vw;
   font-family: 'tempura';
   @media screen and (max-width: 600px) {
-    font-size: 25vw;
+    font-size: 10vw;
   }
-  @media screen and (min-width: 1200px) {
-    font-size: 9em;
+  @media all and (orientation: landscape) {
+    font-size: 16vh;
+    margin: 0 0 48px 0;
   }
 `
 
@@ -48,7 +59,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10vh auto;
+  margin: 15vh auto;
   @media screen and (max-width: 600px) {
     margin: auto;
   }
