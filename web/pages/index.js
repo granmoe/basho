@@ -32,12 +32,11 @@ const HaikuWrapper = styled.div`
     font-variant: small-caps;
   }
   @media screen and (max-width: 600px) {
-    font-size: 1.2em;
     margin: 6vh auto;
     max-width: 90vw;
   }
   @media all and (orientation: landscape) {
-    margin: 2em 0;
+    margin: 2em 0 1em 0;
     font-size: 1.4em;
   }
 `
