@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 const About = styled.div`
   text-align: center;
   font-size: 1.2em;
-  margin: 20vh auto 0;
+  margin: auto;
   padding: 0 1em;
   max-width: 600px;
   @media screen and (max-width: 600px) {
