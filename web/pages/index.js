@@ -105,7 +105,6 @@ const HomePage = ({ theme, changeTheme }) => (
   </ThemeProvider>
 )
 
-// get top 100 color combos from randoma11y and pseudo-randomly pick one
 HomePage.getInitialProps = async ({ store, req }) => {
   const state = store.getState()
   if (Object.keys(state.theme).length) {

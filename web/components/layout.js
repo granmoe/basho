@@ -37,7 +37,7 @@ const Header = styled.header`
 `
 
 const titleCSS = css`
-  font-size: 12vw;
+  font-size: 10em;
   font-family: 'tempura';
   @media screen and (max-width: 600px) {
     font-size: 20vw;
